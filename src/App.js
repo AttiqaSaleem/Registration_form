@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import FormPage from './pages/FormPage';
 import StudentsPage from './pages/StudentsPage';
+import CGPAPage from './pages/CGPAPage'; // ✅ Import the CGPA page
 
 function App() {
   const [students, setStudents] = useState([]);
@@ -33,10 +34,11 @@ function App() {
             <StudentsPage
               students={students}
               updateStudent={updateStudent}
-              deleteStudent={deleteStudent} // ✅ Pass delete handler
+              deleteStudent={deleteStudent}
             />
           }
         />
+        <Route path="/cgpa" element={<CGPAPage />} /> {/* ✅ New Route for 4th page */}
       </Routes>
     </Router>
   );

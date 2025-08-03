@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import InstituteImage from '../assets/institute.jpg'; // 🔴 Add your image in /src/assets/
+import InstituteImage from '../assets/institute.jpg'; // ✅ Make sure this image exists
 
 function Home() {
   const navigate = useNavigate();
@@ -18,12 +18,20 @@ function Home() {
         className="bg-white bg-opacity-80 p-10 rounded-lg shadow-lg text-center"
       >
         <h1 className="text-4xl font-bold text-red-700 mb-6">Welcome to Our University</h1>
-        <button
-          onClick={() => navigate('/form')}
-          className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
-        >
-          Register Now
-        </button>
+        <div className="flex flex-col space-y-4">
+          <button
+            onClick={() => navigate('/form')}
+            className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
+          >
+            Register Now
+          </button>
+          <button
+            onClick={() => navigate('/cgpa')}
+            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+          >
+            View CGPA & Subjects
+          </button>
+        </div>
       </motion.div>
     </div>
   );
